@@ -7,7 +7,7 @@
 const sLog = require('./lib/sLog');
 const Q = require('./lib/q-spore');
 const rabbitMq = require('./lib/rabbitMq');
-// const sqlite = require('./lib/sqlite');
+// const sqlite = require('./lib/sqlite'); "sqlite3": "^3.1.11",
 
 module.exports = {
     Q,
