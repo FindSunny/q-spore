@@ -8,7 +8,7 @@ const { sLog, Sqlite } = require('../index');
 
 // 数据库配置
 const config = {
-    database: 'C:\Users\suojianfei\test.db'
+    database: 'C:/Users/suojianfei/test.db'
 };
 
 describe('sqlite', () => {
@@ -24,7 +24,6 @@ describe('sqlite', () => {
     });
 
     it('query', async () => {
-        let rows = await Sqlite.query(pool, 'select * from test_log');
-        sLog.log(rows);
+        let rows = await Sqlite.query(pool, 'select * from test_log where id = ?', [2]);
     });
 });
