@@ -1,6 +1,7 @@
 {
     "name": "q-spore",
     "main": "index.js",
+    "version": "1.0.1",
     "scripts": {
         "test": "jest"
     },

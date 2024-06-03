@@ -4,7 +4,7 @@
  * 测试sqlite模块的功能
  */
 
-const { sLog, sqlite } = require('../index');
+const { sLog, Sqlite } = require('../index');
 
 // 数据库配置
 const config = {
@@ -14,7 +14,7 @@ const config = {
 describe('sqlite', () => {
     let pool;
     beforeAll(() => {
-        pool = sqlite.createPool({
+        pool = Sqlite.createPool({
             database: config.database
         });
     });
@@ -24,7 +24,7 @@ describe('sqlite', () => {
     });
 
     it('query', async () => {
-        let rows = await sqlite.query(pool, 'select * from test_log');
+        let rows = await Sqlite.query(pool, 'select * from test_log');
         sLog.log(rows);
     });
 });

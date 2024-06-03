@@ -6,7 +6,7 @@
  * Test the rabbitmq module
  */
 
-const { sLog, rabbitMq } = require('../index');
+const { sLog, RabbitMq } = require('../index');
 
 // 初始化rabbitmq配置
 const config = {
@@ -20,15 +20,15 @@ const config = {
 describe('rabbitMq', () => {
     let ch;
     beforeAll(async () => {
-        ch = await rabbitMq.init(config);
+        ch = await RabbitMq.init(config);
     });
     it('connect', () => {
         sLog.log(ch);
     });
     it('send', async () => {
-        await rabbitMq.send('Hello World!');
+        await RabbitMq.send('Hello World!');
         // 关闭连接
-        await rabbitMq.close();
+        await RabbitMq.close();
     });
 
 });
