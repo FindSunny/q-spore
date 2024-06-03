@@ -12,18 +12,9 @@ const config = {
 };
 
 describe('sqlite', () => {
-    let pool;
-    beforeAll(() => {
-        pool = Sqlite.createPool({
-            database: config.database
-        });
-    });
-
-    afterAll(() => {
-        pool.drain().then(() => pool.clear());
-    });
-
     it('query', async () => {
-        let rows = await Sqlite.query(pool, 'select * from test_log where id = ?', [2]);
+        await Sqlite.init(config);
+        await Sqlite.query('select * from test_log where id = ?', [2]);
+        await Sqlite.closeQ();
     });
 });
