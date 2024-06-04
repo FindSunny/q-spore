@@ -6,7 +6,8 @@
  * Test the rabbitmq module
  */
 
-const { sLog, RabbitMq } = require('../index');
+const { RabbitMq } = require('../index');
+const sLog = require('../lib/sLog');
 
 // 初始化rabbitmq配置
 const config = {
