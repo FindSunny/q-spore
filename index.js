@@ -7,10 +7,8 @@
 
 const Q = require('./lib/q-spore');
 const RabbitMq = require('./lib/RabbitMq');
-const Sqlite = require('./lib/Sqlite');
 
 module.exports = {
     Q,
-    RabbitMq,
-    Sqlite
+    RabbitMq
 }
